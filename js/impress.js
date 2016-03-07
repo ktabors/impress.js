@@ -202,6 +202,8 @@
         height: 768,
         maxScale: 1,
         minScale: 0,
+        left: '50%',
+        top: '50%',
         
         perspective: 1000,
         
@@ -346,9 +348,11 @@
             config = {
                 width: toNumber( rootData.width, defaults.width ),
                 height: toNumber( rootData.height, defaults.height ),
-                maxScale: toNumber( rootData.maxScale, defaults.maxScale ),
-                minScale: toNumber( rootData.minScale, defaults.minScale ),                
+                maxScale: toNumber( rootData.maxscale, defaults.maxScale ),
+                minScale: toNumber( rootData.minscale, defaults.minScale ),                
                 perspective: toNumber( rootData.perspective, defaults.perspective ),
+                top: toNumber( rootData.top, defaults.top ),
+                left: toNumber( rootData.left, defaults.left ),
                 transitionDuration: toNumber( rootData.transitionDuration, defaults.transitionDuration )
             };
             
@@ -377,8 +381,8 @@
             
             css(root, rootStyles);
             css(root, {
-                top: "50%",
-                left: "50%",
+                top: config.top,
+                left: config.left,
                 transform: perspective( config.perspective/windowScale ) + scale( windowScale )
             });
             css(canvas, rootStyles);
