@@ -351,8 +351,8 @@
                 maxScale: toNumber( rootData.maxscale, defaults.maxScale ),
                 minScale: toNumber( rootData.minscale, defaults.minScale ),                
                 perspective: toNumber( rootData.perspective, defaults.perspective ),
-                top: rootData.top, defaults.top,
-                left: rootData.left, defaults.left,
+                top: rootData.top || defaults.top,
+                left: rootData.left || defaults.left,
                 transitionDuration: toNumber( rootData.transitionDuration, defaults.transitionDuration )
             };
             
